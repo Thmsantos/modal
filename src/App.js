@@ -1,6 +1,7 @@
 import './App.css';
 import { useState } from "react";
 import Modal from "react-modal"
+import Select from 'react-select'
 
 Modal.setAppElement('#root')
 
@@ -16,6 +17,12 @@ function App() {
     setIsopen(false);
   }
 
+  const options = [
+    { label: 'Chocolate' },
+    { label: 'Strawberry' },
+    { label: 'Vanilla' }
+  ]
+
   return (
     <div className="App">
         <button onClick={openModal}>Open</button>
@@ -28,11 +35,9 @@ function App() {
         >
             <h2>Foi caraio</h2>
             <br />
-            <p>Água é uma substância química cujas moléculas são formadas por
-               dois átomos de hidrogênio e um de oxigênio. É abundante no Universo,
-               inclusive na Terra, onde cobre grande parte de sua superfície e é o
-               maior constituinte dos fluidos dos seres vivos.
-            </p>
+           
+          <Select options={options} />
+
             <button onClick={closeModal}>close</button>
         </Modal>
     </div>
